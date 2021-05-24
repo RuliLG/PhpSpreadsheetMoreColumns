@@ -1,5 +1,5 @@
 {
-    "name": "RuliLG/phpspreadsheet-column-limit",
+    "name": "rulilg/phpspreadsheet-column-limit",
     "description": "PHPSpreadsheet - Read, Create and Write Spreadsheet documents in PHP - Spreadsheet engine with 6 as column limit",
     "keywords": [
         "PHP",
