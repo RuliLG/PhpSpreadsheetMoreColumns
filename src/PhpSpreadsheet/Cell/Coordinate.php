@@ -297,10 +297,22 @@ abstract class Coordinate
                 $indexCache[$pString] = $columnLookup[$pString[0]] * 676 + $columnLookup[$pString[1]] * 26 + $columnLookup[$pString[2]];
 
                 return $indexCache[$pString];
+            } elseif (!isset($pString[4])) {
+                $indexCache[$pString] = $columnLookup[$pString[0]] * 17576 + $columnLookup[$pString[1]] * 676 + $columnLookup[$pString[2]] * 26 + $columnLookup[$pString[3]];
+
+                return $indexCache[$pString];
+            } elseif (!isset($pString[5])) {
+                $indexCache[$pString] = $columnLookup[$pString[0]] * 456976 + $columnLookup[$pString[1]] * 17576 + $columnLookup[$pString[2]] * 676 + $columnLookup[$pString[3]] * 26 + $columnLookup[$pString[4]];
+
+                return $indexCache[$pString];
+            } elseif (!isset($pString[6])) {
+                $indexCache[$pString] = $columnLookup[$pString[0]] * 11881376 + $columnLookup[$pString[1]] * 456976 + $columnLookup[$pString[2]] * 17576 + $columnLookup[$pString[3]] * 676 + $columnLookup[$pString[4]] * 26 + $columnLookup[$pString[5]];
+
+                return $indexCache[$pString];
             }
         }
 
-        throw new Exception('Column string index can not be ' . ((isset($pString[0])) ? 'longer than 3 characters' : 'empty'));
+        throw new Exception('Column string index can not be ' . ((isset($pString[0])) ? 'longer than 6 characters' : 'empty'));
     }
 
     /**

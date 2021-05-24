@@ -31,13 +31,13 @@ class CoordinateTest extends TestCase
 
     public function testColumnIndexFromStringTooLong(): void
     {
-        $cellAddress = 'ABCD';
+        $cellAddress = 'ABCDEFG';
 
         try {
             Coordinate::columnIndexFromString($cellAddress);
         } catch (\Exception $e) {
             self::assertInstanceOf(Exception::class, $e);
-            self::assertEquals($e->getMessage(), 'Column string index can not be longer than 3 characters');
+            self::assertEquals($e->getMessage(), 'Column string index can not be longer than 6 characters');
 
             return;
         }
